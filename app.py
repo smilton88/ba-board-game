@@ -53,6 +53,8 @@ def SaveFile(A, B):
         with open(FileName, 'w'):
             FileHandle.write(AString)
             FileHandle.write(BString)
+
+        print('The game has been saved!')
     else:
         return
 
@@ -377,6 +379,7 @@ def Game():
       if not ListEmpty(ListOfMoves):
         PieceIndex = SelectMove(ListOfMoves)
         Board, A, B = MakeMove(Board, A, B, ListOfMoves, PieceIndex)
+        SaveFile(A, B)
         NextPlayer = SwapPlayer(NextPlayer)
       else:
         GameEnd = True
