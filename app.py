@@ -30,6 +30,32 @@ def LoadPieces(FileHandle, PlayersPieces):
     PlayersPieces[Index][DAME] = int(FileHandle.readline())
   return PlayersPieces
 
+def SavePieces(PlayersPieces):
+    PieceString = ''
+    For Piece in PlayersPieces:
+        PieceString += str(Piece[ROW]) + '\n'
+        PieceString += str(Piece[COLUMN]) + '\n'
+        PieceString += str(Piece[DAME]) + '\n'
+    return PieceString
+
+def SaveFile(A, B):
+    Option = input('Would you like to save the game? ')
+
+    if Option.lower() = 'Y':
+        FileName = input('Enter a filename: ')
+
+        if '.txt' not in FileName:
+            FileName += '.txt'
+        
+        AString = SavePieces(A)
+        BString = SavePieces(B)
+
+        with open(FileName, 'w'):
+            FileHandle.write(AString)
+            FileHandle.write(BString)
+    else:
+        return
+
 def CreateNewBoard(Board): 
   for ThisRow in range(BOARD_SIZE):
     for ThisColumn in range(BOARD_SIZE):
@@ -365,5 +391,5 @@ def Game():
   if FileFound:
     PrintResult(A, B , NextPlayer)
       
-if __name__ == "__main__":
+if __name__ == '__main__':
   Game()
