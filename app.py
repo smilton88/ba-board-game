@@ -32,7 +32,7 @@ def LoadPieces(FileHandle, PlayersPieces):
 
 def SavePieces(PlayersPieces):
     PieceString = ''
-    For Piece in PlayersPieces:
+    for Piece in PlayersPieces:
         PieceString += str(Piece[ROW]) + '\n'
         PieceString += str(Piece[COLUMN]) + '\n'
         PieceString += str(Piece[DAME]) + '\n'
