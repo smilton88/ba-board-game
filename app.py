@@ -38,10 +38,10 @@ def SavePieces(PlayersPieces):
         PieceString += str(Piece[DAME]) + '\n'
     return PieceString
 
-def SaveFile(A, B):
+def SaveFile(A, B,):
     Option = input('Would you like to save the game? ')
 
-    if Option.lower() = 'Y':
+    if Option.lower() == 'y':
         FileName = input('Enter a filename: ')
 
         if '.txt' not in FileName:
@@ -50,7 +50,7 @@ def SaveFile(A, B):
         AString = SavePieces(A)
         BString = SavePieces(B)
 
-        with open(FileName, 'w'):
+        with open(FileName, 'w') as FileHandle:
             FileHandle.write(AString)
             FileHandle.write(BString)
 
